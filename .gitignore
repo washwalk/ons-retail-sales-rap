@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.quarto/
+.ipynb_checkpoints/
+*.pyc
+
+# Keep reproducible source code under version control, not downloaded/generated data.
+data/raw/*
+data/processed/*
+outputs/figures/*
+outputs/tables/*
+outputs/*.html
+
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!outputs/figures/.gitkeep
+!outputs/tables/.gitkeep
