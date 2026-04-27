@@ -1,6 +1,10 @@
 # ONS Retail Sales RAP
 
+[![Publish Statistical Report](https://github.com/washwalk/ons-retail-sales-rap/actions/workflows/publish-report.yml/badge.svg)](https://github.com/washwalk/ons-retail-sales-rap/actions/workflows/publish-report.yml)
+
 Automated reproducible analytical pipeline using Python and Quarto to ingest ONS Retail Sales Index data, clean and analyse it, and generate a statistical summary report.
+
+Published report: `https://washwalk.github.io/ons-retail-sales-rap/`
 
 ## Purpose
 
@@ -58,12 +62,19 @@ make test
 
 Generated data and reports are excluded from git because they can be recreated from the source code.
 
+## Automated Publishing
+
+GitHub Actions runs the full RAP on every push to `main`, on manual dispatch, and on a monthly schedule. The workflow installs Python dependencies and Quarto, rebuilds the report from the latest ONS data, and publishes the generated HTML to GitHub Pages.
+
+This provides an auditable run history and a public report URL while keeping generated data out of version control.
+
 ## RAP Features
 
 - Public API ingestion rather than manual downloads.
 - Raw and processed data are stored separately.
 - Repeatable cleaning and analysis steps.
 - One-command report generation through `make report`.
+- Automated GitHub Pages publication through GitHub Actions.
 - Lightweight automated tests for core transformations.
 - Version-control friendly project structure.
 
